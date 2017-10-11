@@ -1,0 +1,39 @@
+.search-area{
+    padding-top:20px;
+    padding-bottom: 20px;
+    background-color: #1e7e34;
+}
+
+.search-area-heading{
+    padding-bottom: 10px;
+}
+
+.category-list{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color : #eeeeee;
+}
+
+.category-list ul{
+    list-style-type: none;
+}
+
+.vacancy-list {
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.vacancy-category{
+    font-size: small;
+}
+
+#vacancy-table td{
+    padding: 3px;
+    font-size:small;
+}
+
+.btn-vacancy-more:hover{
+    cursor: pointer;
+}
