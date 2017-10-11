@@ -1,7 +1,7 @@
 .search-area{
     padding-top:20px;
-    padding-bottom: 20px;
-    background-color: #1e7e34;
+    padding-bottom: 50px;
+    /*background-color: #1e7e34;*/
 }
 
 .search-area-heading{
@@ -10,12 +10,36 @@
 
 .category-list{
     padding-top: 20px;
-    padding-bottom: 20px;
-    background-color : #eeeeee;
+    padding-bottom: 10px;
+    background-color : #ffb74d;
 }
 
 .category-list ul{
     list-style-type: none;
+}
+
+.category-list ul li{
+
+    margin-bottom: 10px;
+}
+
+.category-item{
+    border-radius: 20px;
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #ffcc80;
+    padding: 8px;
+}
+
+.category-item:hover{
+    text-decoration: none;
+    color: #ffffdd;
+    background-color: #727b84;
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
 }
 
 .vacancy-list {
@@ -25,9 +49,6 @@
     padding-bottom: 50px;
 }
 
-.vacancy-category{
-    font-size: small;
-}
 
 #vacancy-table td{
     padding: 3px;
