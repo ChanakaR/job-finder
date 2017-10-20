@@ -35,6 +35,34 @@ class Resource
      */
     private $name;
 
+    /**
+     * @var string
+     * @ORM\Column(name="category", type="string", length=100)
+     */
+    private $category;
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Resource
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
 
     /**
      * Get id

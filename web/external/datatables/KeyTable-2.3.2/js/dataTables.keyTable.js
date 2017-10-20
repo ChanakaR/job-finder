@@ -676,7 +676,7 @@ $.extend( KeyTable.prototype, {
 				break;
 
 			case 35: // end (end of current page)
-			case 36: // home (start of current page)
+			case 36: // pages (start of current page)
 				if ( navEnable ) {
 					e.preventDefault();
 					var indexes = dt.cells( {page: 'current'} ).indexes();
