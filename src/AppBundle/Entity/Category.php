@@ -2,15 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Resource
+ * Category
  *
- * @ORM\Table(name="resource")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ResourceRepository")
+ * @ORM\Table(name="category")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoryRepository")
  */
-class Resource
+class Category
 {
     /**
      * @var int
@@ -24,35 +25,27 @@ class Resource
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=150)
+     * @ORM\Column(name="name", type="string", length=100)
      */
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="Resource")
-     * @ORM\JoinColumn(name="category_id",referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Resource", mappedBy="category")
      */
-    private $category;
+    private $resources;
 
-    /**
-     * Get category
-     *
-     * @return Category
-     */
-    public function getCategory(){
-        return $this->category;
+    public function __construct()
+    {
+        $this->resources = new ArrayCollection();
     }
 
     /**
-     * Set category
+     * Get resources
      *
-     * @param Category $category
-     *
-     * @return Resource
+     * @return ArrayCollection
      */
-    public function setCategory($category){
-        $this->category = $category;
-        return $this;
+    public function getResources(){
+        return $this->resources;
     }
 
     /**
@@ -65,13 +58,12 @@ class Resource
         return $this->id;
     }
 
-
     /**
      * Set name
      *
      * @param string $name
      *
-     * @return Resource
+     * @return Category
      */
     public function setName($name)
     {
