@@ -33,42 +33,32 @@
             </div>
         </div>
         <div class="row category-list" >
-            <div class="col-lg-3">
-                <ul>
-                    <li><a class="category-item" href="#">IT-Sware/DB/QA/Web/Graphics/GIS</a></li>
-                    <li><a class="category-item" href="#">HR/Training</a></li>
-                    <li><a class="category-item" href="#">Customer Relations/Public Relations</a></li>
-                    <li><a class="category-item" href="#">Hotels/Restaurants/Food</a></li>
-                    <li><a class="category-item" href="#">Supervision/Quality Control</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3">
-                <ul>
-                    <li><a class="category-item" href="#">Agriculture/Dairy/Environment</a></li>
-                    <li><a class="category-item" href="#">Imports/Exports</a></li>
-                    <li><a class="category-item" href="#">Security</a></li>
-                    <li><a class="category-item" href="#">Go somewhere</a></li>
-                    <li><a class="category-item" href="#">Fashion/Design/Beauty</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3">
-                <ul>
-                    <li><a class="category-item" href="#">International Development</a></li>
-                    <li><a class="category-item" href="#">Sales/Marketing/Merchandising</a></li>
-                    <li><a class="category-item" href="#">Go somewhere</a></li>
-                    <li><a class="category-item" href="#">Go somewhere</a></li>
-                    <li><a class="category-item" href="#">Hospital/Nursing/Healthcare</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3">
-                <ul>
-                    <li><a class="category-item" href="#">Go somewhere</a></li>
-                    <li><a class="category-item" href="#">Go somewhere</a></li>
-                    <li><a class="category-item" href="#">International Development</a></li>
-                    <li><a class="category-item" href="#">Sales/Marketing/Merchandising</a></li>
-                    <li><a class="category-item" href="#">Go somewhere</a></li>
-                </ul>
-            </div>
+
+            {% if category_size < 5 %}
+                {% for category in category_list %}
+                    <div class="col-lg-3">
+                        <ul>
+                            <li><a class="category-item" href="#">{{ category.name }}</a></li>
+                        </ul>
+                    </div>
+                {% endfor %}
+            {% else  %}
+                {% set start,length = 0, category_limit_row %}
+                {% for i in 1..4 %}
+                    {% if i == category_limit_col+1 %}
+                        {% set length = length - 1 %}
+                    {% endif %}
+                    <div class="col-lg-3">
+                        <ul>
+                            {% for category in category_list|slice(start,length) %}
+                                <li><a class="category-item" href="#">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {%  set start = start + length %}
+                {% endfor %}
+            {% endif %}
+
         </div>
 
         <div class="row vacancy-list">

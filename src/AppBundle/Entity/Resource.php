@@ -29,7 +29,7 @@ class Resource
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="Resource")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="resources")
      * @ORM\JoinColumn(name="category_id",referencedColumnName="id")
      */
     private $category;

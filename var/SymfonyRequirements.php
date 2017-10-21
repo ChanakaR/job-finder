@@ -417,7 +417,7 @@ class SymfonyRequirements extends RequirementCollection
         );
 
         $this->addRequirement(
-            is_dir(__DIR__.'/../vendor/composer'),
+            is_dir(__DIR__.'/../external/composer'),
             'Vendor libraries must be installed',
             'Vendor libraries are missing. Install composer following instructions from <a href="http://getcomposer.org/">http://getcomposer.org/</a>. '.
                 'Then run "<strong>php composer.phar install</strong>" to install them.'
@@ -564,8 +564,8 @@ class SymfonyRequirements extends RequirementCollection
 
         /* optional recommendations follow */
 
-        if (file_exists(__DIR__.'/../vendor/composer')) {
-            require_once __DIR__.'/../vendor/autoload.php';
+        if (file_exists(__DIR__.'/../external/composer')) {
+            require_once __DIR__.'/../external/autoload.php';
 
             try {
                 $r = new ReflectionClass('Sensio\Bundle\DistributionBundle\SensioDistributionBundle');
