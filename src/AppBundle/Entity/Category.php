@@ -30,7 +30,7 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Resource", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Resource", mappedBy="category")
      */
     private $resources;
 

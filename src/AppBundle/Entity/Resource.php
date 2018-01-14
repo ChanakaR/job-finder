@@ -29,10 +29,82 @@ class Resource
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="resources")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="resources")
      * @ORM\JoinColumn(name="category_id",referencedColumnName="id")
      */
     private $category;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="employer",type="string",length=75)
+     */
+    private $employer;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description",type="string",length=150)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="position",type="string",length=75)
+     */
+    private $position;
+
+
+    /**
+     * @return string
+     */
+    public function getEmployer()
+    {
+        return $this->employer;
+    }
+
+    /**
+     * @param string $employer
+     */
+    public function setEmployer($employer)
+    {
+        $this->employer = $employer;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param string $position
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    }
+
 
     /**
      * Get category

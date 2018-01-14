@@ -9,6 +9,7 @@
 namespace AppBundle\Controller\Web;
 
 use AppBundle\Entity\Category;
+use AppBundle\Entity\Resource;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -18,6 +19,7 @@ class MainController extends Controller
      * @Route("/",name="homepage")
      */
     public function homeAction(){
+
 
         $category_list = $this->getCategoryList();
         $category_count = count($category_list);
@@ -31,6 +33,17 @@ class MainController extends Controller
             "category_limit_col" => $cat_limit_col
         ]);
     }
+
+
+    /**
+     * @Route("/viewJobSpecs/{resource}",name="jobSpecPage")
+     */
+    public function viewJobSpecAction($resource){
+        return $this->render('pages/viewJobSpec.html.twig',[
+            "resource"=>"vacancies/$resource"
+        ]);
+//        return $this->redirect($this->generateUrl('homepage'));
+    }
     
     /*
      * Get category list from database and return as a json
@@ -40,6 +53,33 @@ class MainController extends Controller
         $query = $repository->createQueryBuilder('c')
             ->select('c.name')
             ->orderBy('c.name','ASC')
+            ->getQuery();
+        $result = $query->getArrayResult();
+        return $result;
+    }
+
+    /*
+     * Get recent job vacancies
+     */
+    private function getRecentJobVacancies(){
+        $repository = $this->getDoctrine()->getRepository(Resource::class);
+        $query =$repository->createQueryBuilder('r')
+            ->orderBy('r.id','DESC')
+            ->setMaxResults(100)
+            ->getQuery();
+        $result = $query->getArrayResult();
+        return $result;
+    }
+
+    /*
+     * Get list of job vacancies by category ID
+     */
+    private function getVacancyByCategory($categoryId){
+        $repository = $this->getDoctrine()->getRepository(Resource::class);
+        $query =$repository->createQueryBuilder('r')
+            ->orderBy('r.id','DESC')
+            ->where("r.category = :category_id")
+            ->setParameter("category_id",$categoryId)
             ->getQuery();
         $result = $query->getArrayResult();
         return $result;
