@@ -58,3 +58,28 @@
 .btn-vacancy-more:hover{
     cursor: pointer;
 }
+
+footer{
+    margin-top: 2%;
+}
+
+footer h5{
+    color: #ffb74d;
+}
+
+footer a{
+    font-size: small;
+    color: white;
+}
+footer a:hover{
+    color: #ffb74d;
+}
+
+.footer-middle{
+    padding-top: 2em;
+    color: white;
+}
+
+.footer-bottom{
+    background-color: black;
+}
