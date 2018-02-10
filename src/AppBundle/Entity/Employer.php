@@ -44,6 +44,13 @@ class Employer
     private $website;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
+     */
+    private $logo;
+
+    /**
      * @ORM\OneToMany(targetEntity="Vacancy", mappedBy="employer")
      */
     private $vacancy;

@@ -77,9 +77,9 @@
                 {% for vacancy in recent_vacancy_list%}
                     <tr class='vacancy-row' data-href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" >
                         {#<td>{{ vacancy.id }}</td>#}
-                        <td>{{ vacancy.name }}</td>
+                        <td>{{ vacancy[0].name }}</td>
                         <td>{{ vacancy.emp_name }}</td>
-                        <td>{{ vacancy.description }}</td>
+                        <td>{{ vacancy[0].description }}</td>
                         <td><a href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" target="_blank">More</a> </td>
                     </tr>
                 {% endfor %}

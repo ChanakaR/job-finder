@@ -9,6 +9,7 @@
 namespace AppBundle\Controller\Web;
 
 use AppBundle\Entity\Category;
+use AppBundle\Entity\Employer;
 use AppBundle\Entity\Vacancy;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -30,7 +31,7 @@ class MainController extends Controller
         $cat_limit_row = ($category_count + (6-$cat_limit_col))/6;
 
         $recent_vacancy_list = $this->getRecentJobVacancies();
-        
+
         return $this->render('pages/home.html.twig',[
             "home_activated" => true,
             "category_activated" => false,
@@ -76,19 +77,29 @@ class MainController extends Controller
 
         $employer_list = $this->getEmployersList();
 
-        $employer_count = count($employer_list);
-        $emp_limit_col = $employer_count%4;
-        $emp_limit_row = ($employer_count + (4-$emp_limit_col))/4;
 
         return $this->render('pages/employer.html.twig',[
             "home_activated" => false,
             "category_activated" => false,
             "employer_activated" => true,
             "contact_activated" => false,
-            "employer_count"=>$employer_count,
-            "employer_limit_row" => $emp_limit_row,
-            "employer_limit_col" => $emp_limit_col,
             "employer_list"=>$employer_list,
+        ]);
+    }
+    /**
+     * @Route("/employer/{id}",name="employerDetails")
+     */
+    public function employerDetailsAction($id){
+
+        $employer_details = $this->getEmployerDetailsById($id);
+        
+        return $this->render('pages/viewEmployerSpec.html.twig',[
+            "home_activated" => false,
+            "category_activated" => false,
+            "employer_activated" => false,
+            "contact_activated" => false,
+            "employer"=>$employer_details["employer"],
+            "vacancy_list"=>$employer_details["vacancy_list"],
         ]);
     }
 
@@ -156,16 +167,33 @@ class MainController extends Controller
     }
 
     /*
-     * Get list of job vacancies by category ID
+     * Get Employer details
      */
     private function getEmployersList(){
-        $repository = $this->getDoctrine()->getRepository(Vacancy::class);
-        $query =$repository->createQueryBuilder('v')
-            ->select('v.employer')
-            ->orderBy('v.employer','ASC')
-            ->distinct(true)
+        $repository = $this->getDoctrine()->getRepository(Employer::class);
+        $query =$repository->createQueryBuilder('e')
+            ->select('e')
             ->getQuery();
         $result = $query->getArrayResult();
+        return $result;
+    }
+
+    private function getEmployerDetailsById($id){
+        $employer = $this->getDoctrine()->getRepository(Employer::class)
+            ->createQueryBuilder('e')
+            ->where("e.id = :employer_id")
+            ->setParameter("employer_id",$id)
+            ->getQuery()
+            ->getArrayResult();
+
+        $vacancy_list = $this->getDoctrine()->getRepository(Vacancy::class)
+            ->createQueryBuilder('v')
+            ->where("v.employer = :employer_id")
+            ->setParameter("employer_id",$id)
+            ->orderBy('v.id','DESC')
+            ->getQuery()->getArrayResult();
+
+        $result = array("employer" => $employer, "vacancy_list"=>$vacancy_list);
         return $result;
     }
 }
