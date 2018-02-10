@@ -15,20 +15,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class MainController extends Controller
 {
+
+    private $category_list = null;
     /**
      * @Route("/",name="homepage")
      */
     public function homeAction(){
 
-
-        $category_list = $this->getCategoryList();
-        $category_count = count($category_list);
+        if($this->category_list == null){
+            $this->category_list = $this->getCategoryList();
+        }
+        $category_count = count($this->category_list);
         $cat_limit_col = $category_count%6;
         $cat_limit_row = ($category_count + (6-$cat_limit_col))/6;
 
         $recent_vacancy_list = $this->getRecentJobVacancies();
         return $this->render('pages/home.html.twig',[
-            "category_list"=>$category_list,
+            "home_activated" => true,
+            "category_activated" => false,
+            "category_list"=>$this->category_list,
             "category_size"=>$category_count,
             "category_limit_row" => $cat_limit_row,
             "category_limit_col" => $cat_limit_col,
@@ -36,13 +41,34 @@ class MainController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/category",name="category")
+     */
+    public function categoryAction(){
+
+        if($this->category_list == null){
+            $this->category_list = $this->getCategoryList();
+        }
+
+        return $this->render('pages/category.html.twig',[
+            "home_activated" => false,
+            "category_activated" => true,
+            "category_list"=>$this->category_list
+        ]);
+    }
+
 
     /**
      * @Route("/viewJobSpecs/{vacancy}",name="jobSpecPage")
+     * @param $vacancy
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function viewJobSpecAction($vacancy){
         return $this->render('pages/viewJobSpec.html.twig',[
-            "vacancy"=>"vacancies/$vacancy"
+            "vacancy"=>"vacancies/$vacancy",
+            "home_activated"=>false,
+            "category_activated"=> false
+
         ]);
 //        return $this->redirect($this->generateUrl('homepage'));
     }
