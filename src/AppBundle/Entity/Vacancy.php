@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Resource
+ * Vacancy
  *
- * @ORM\Table(name="resource")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ResourceRepository")
+ * @ORM\Table(name="vacancy")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\VacancyRepository")
  */
-class Resource
+class Vacancy
 {
     /**
      * @var int
@@ -29,7 +29,7 @@ class Resource
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="resources")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="vacancy")
      * @ORM\JoinColumn(name="category_id",referencedColumnName="id")
      */
     private $category;
@@ -52,9 +52,9 @@ class Resource
     /**
      * @var string
      *
-     * @ORM\Column(name="position",type="string",length=75)
+     * @ORM\Column(name="location",type="string",length=75)
      */
-    private $position;
+    private $location;
 
 
     /**
@@ -92,17 +92,18 @@ class Resource
     /**
      * @return string
      */
-    public function getPosition()
+    public function getLocation()
     {
-        return $this->position;
+        return $this->location;
     }
 
     /**
-     * @param string $position
+     * @param $location
+     * @internal param string $position
      */
-    public function setPosition($position)
+    public function setLocation($location)
     {
-        $this->position = $position;
+        $this->location = $location;
     }
 
 

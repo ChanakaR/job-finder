@@ -34,9 +34,9 @@
         </div>
         <div class="row category-list" >
 
-            {% if category_size < 5 %}
+            {% if category_size < 7 %}
                 {% for category in category_list %}
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <ul>
                             <li><a class="category-item" href="#">{{ category.name }}</a></li>
                         </ul>
@@ -44,11 +44,11 @@
                 {% endfor %}
             {% else  %}
                 {% set start,length = 0, category_limit_row %}
-                {% for i in 1..4 %}
+                {% for i in 1..6 %}
                     {% if i == category_limit_col+1 %}
                         {% set length = length - 1 %}
                     {% endif %}
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <ul>
                             {% for category in category_list|slice(start,length) %}
                                 <li><a class="category-item" href="#">{{ category.name }}</a></li>
@@ -66,7 +66,7 @@
             <table id="vacancy-table" class="table table-condensed table-hover" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    {#<th>ID</th>#}
                     <th>Position</th>
                     <th>Employer</th>
                     <th>Description</th>
@@ -74,125 +74,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td><a href="#" data-toggle="modal" data-target="#vacancy_details_modal">more</a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td><a href="{{ path('jobSpecPage',{'resource':'va.pdf'}) }}" target="_blank">Open in new window</a> </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>This is the description</td>
-                    <td>2011/04/25</td>
-                </tr>
+                {% for vacancy in recent_vacancy_list%}
+                    <tr class='vacancy-row' data-href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" >
+                        {#<td>{{ vacancy.id }}</td>#}
+                        <td>{{ vacancy.name }}</td>
+                        <td>{{ vacancy.employer }}</td>
+                        <td>{{ vacancy.description }}</td>
+                        <td><a href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" target="_blank">More</a> </td>
+                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
 

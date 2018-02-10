@@ -30,13 +30,13 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Resource", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Vacancy", mappedBy="category")
      */
-    private $resources;
+    private $vacancy;
 
     public function __construct()
     {
-        $this->resources = new ArrayCollection();
+        $this->vacancy = new ArrayCollection();
     }
 
     /**
@@ -44,8 +44,8 @@ class Category
      *
      * @return ArrayCollection
      */
-    public function getResources(){
-        return $this->resources;
+    public function getVacancy(){
+        return $this->vacancy;
     }
 
     /**
