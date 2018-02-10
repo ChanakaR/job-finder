@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container-fluid">
+        <div class="row justify-content-center bg-dark search-area">
+            <div class="col-lg-12 search-area-heading">
+                <h3 class="text-white text-center">EXPLORE YOUR JOBS...</h3>
+            </div>
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Keyword" aria-label="Search for...">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="All categories" aria-label="Search for...">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="All locations" aria-label="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger " type="button">Find</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row category-category-list" >
+            <div class="col-lg-12">
+                <h3 class="text-center">EMPLOYERS</h3>
+            </div>
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/omobio.png') }}" alt="Card image cap">
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/CodeGen.png') }}" alt="Card image cap">
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/WSO2_Software_Logo.png') }}" alt="Card image cap">
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/mas.png') }}" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/omobio.png') }}" alt="Card image cap">
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/mas.png') }}" alt="Card image cap">
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/CodeGen.png') }}" alt="Card image cap">
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="employer">
+                    <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/WSO2_Software_Logo.png') }}" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -32,8 +32,19 @@
                             <li class="nav-item">
                         {% endif %}
                                 <a class="nav-link" href="{{ path('category')}}">Categories</a>
-                            </li>
+                        </li>
+                        {% if employer_activated  %}
+                        <li class="nav-item active">
+                            {% else %}
                         <li class="nav-item">
+                            {% endif %}
+                            <a class="nav-link" href="{{ path('employer')}}">Employers</a>
+                        </li>
+                        {% if contact_activated  %}
+                        <li class="nav-item active">
+                            {% else %}
+                        <li class="nav-item">
+                            {% endif %}
                             <a class="nav-link" href="#">Contact us</a>
                         </li>
                     </ul>

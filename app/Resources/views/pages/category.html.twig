@@ -3,20 +3,59 @@
 {% block body %}
     {{ parent() }}
     <div class="container-fluid">
-        <div class="row justify-content-center bg-dark" style="padding-bottom: 20px;">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-8">
-                <label class="text-warning">OrangeHRM Inc. | Engineering | Software Engineer</label>
+        <div class="row justify-content-center bg-dark search-area">
+            <div class="col-lg-12 search-area-heading">
+                <h3 class="text-white text-center">EXPLORE YOUR JOBS...</h3>
             </div>
-            <div class="col-lg-3 btn-group btn-group">
-                <button type="button" class="btn btn-outline-secondary">Previous</button>
-                <button type="button" class="btn btn-outline-secondary">Next</button>
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Keyword" aria-label="Search for...">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="All categories" aria-label="Search for...">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="All locations" aria-label="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger " type="button">Find</button>
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-
+        <div class="row category-category-list" >
+            <div class="col-lg-12">
+                <h3 class="text-center">VACANCY CATEGORIES</h3>
+            </div>
+            {% if category_size < 5 %}
+                {% for category in category_list %}
+                    <div class="col-lg-3">
+                        <ul>
+                            <li><a class="category-category-item" href="#">{{ category.name }}</a></li>
+                        </ul>
+                    </div>
+                {% endfor %}
+            {% else  %}
+                {% set start,length = 0, category_limit_row %}
+                {% for i in 1..4 %}
+                    {% if i == category_limit_col+1 %}
+                        {% set length = length - 1 %}
+                    {% endif %}
+                    <div class="col-lg-3">
+                        <ul>
+                            {% for category in category_list|slice(start,length) %}
+                                <li><a class="category-category-item" href="#">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {%  set start = start + length %}
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
 
 

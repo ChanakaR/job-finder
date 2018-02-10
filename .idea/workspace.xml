@@ -4,7 +4,12 @@
     <list default="true" id="4c007249-ac5c-4ba2-adb6-3d01cb7e73b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/category.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/category.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/home.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/home.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Web/MainController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Web/MainController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Vacancy.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Vacancy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/jobfinder.css" afterPath="$PROJECT_DIR$/web/css/jobfinder.css" />
     </list>
     <ignored path="jobfinder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +41,8 @@
       <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+            <state relative-caret-position="370">
+              <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
               <folding>
                 <element signature="e#3085#3096#0#Twig" expanded="true" />
                 <element signature="e#3393#3404#0#Twig" expanded="true" />
@@ -46,38 +51,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-508">
-              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+            <state relative-caret-position="266">
+              <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
               <folding>
                 <element signature="e#1329#1337#0#Twig" expanded="true" />
                 <element signature="e#1719#1727#0#Twig" expanded="true" />
+                <element signature="e#2072#2080#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/category.html.twig">
+      <file leaf-file-name="employer.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/employer.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="-389">
+              <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+              <folding>
+                <element signature="e#1520#1546#0#HTML" expanded="true" />
+                <element signature="e#1774#1800#0#HTML" expanded="true" />
+                <element signature="e#2029#2055#0#HTML" expanded="true" />
+                <element signature="e#2295#2321#0#HTML" expanded="true" />
+                <element signature="e#2545#2571#0#HTML" expanded="true" />
+                <element signature="e#2799#2825#0#HTML" expanded="true" />
+                <element signature="e#3050#3076#0#HTML" expanded="true" />
+                <element signature="e#3305#3331#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Employer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+              <folding>
+                <element signature="e#36#84#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobfinder.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/jobfinder.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Web/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+            <state relative-caret-position="216">
+              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
               <folding>
                 <element signature="e#128#158#0#PHP" expanded="true" />
-                <element signature="e#1469#1495#0#PHP" expanded="true" />
+                <element signature="e#1730#1756#0#PHP" expanded="true" />
+                <element signature="e#2486#2512#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Category.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+              <folding>
+                <element signature="e#36#84#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vacancy.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Vacancy.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="38" column="66" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,8 +145,8 @@
       <file leaf-file-name="viewJobSpec.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/viewJobSpec.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="50" column="114" selection-start-line="50" selection-start-column="107" selection-end-line="50" selection-end-column="114" />
+            <state relative-caret-position="439">
+              <caret line="50" column="115" selection-start-line="50" selection-start-column="115" selection-end-line="50" selection-end-column="115" />
               <folding />
             </state>
           </provider>
@@ -126,14 +186,16 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Resource.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/VacancyRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Vacancy.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/viewJobSpec.html.twig" />
         <option value="$PROJECT_DIR$/web/js/jobfinder.js" />
-        <option value="$PROJECT_DIR$/web/css/jobfinder.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/category.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/jobfinder.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/employer.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Vacancy.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Employer.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/home.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Web/MainController.php" />
       </list>
@@ -516,12 +578,12 @@
       <workItem from="1516118118578" duration="3436000" />
       <workItem from="1518104216600" duration="67000" />
       <workItem from="1518188302497" duration="2299000" />
-      <workItem from="1518225478292" duration="11006000" />
+      <workItem from="1518225478292" duration="20270000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98810000" />
+    <option name="totallyTimeSpent" value="108074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-2" width="1440" height="902" extended-state="6" />
@@ -585,20 +647,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/jobfinder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/jobfinder.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/external/bootstrap/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -844,24 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Vacancy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
-          <folding>
-            <element signature="e#36#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -886,45 +916,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/jobfinder.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/category.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="39">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/viewJobSpec.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="50" column="114" selection-start-line="50" selection-start-column="107" selection-end-line="50" selection-end-column="114" />
+        <state relative-caret-position="439">
+          <caret line="50" column="115" selection-start-line="50" selection-start-column="115" selection-end-line="50" selection-end-column="115" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Web/MainController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
+          <folding>
+            <element signature="e#1329#1337#0#Twig" expanded="true" />
+            <element signature="e#1719#1727#0#Twig" expanded="true" />
+            <element signature="e#2072#2080#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/jobfinder.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
-          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+          <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/employer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-389">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding>
-            <element signature="e#128#158#0#PHP" expanded="true" />
-            <element signature="e#1469#1495#0#PHP" expanded="true" />
+            <element signature="e#1520#1546#0#HTML" expanded="true" />
+            <element signature="e#1774#1800#0#HTML" expanded="true" />
+            <element signature="e#2029#2055#0#HTML" expanded="true" />
+            <element signature="e#2295#2321#0#HTML" expanded="true" />
+            <element signature="e#2545#2571#0#HTML" expanded="true" />
+            <element signature="e#2799#2825#0#HTML" expanded="true" />
+            <element signature="e#3050#3076#0#HTML" expanded="true" />
+            <element signature="e#3305#3331#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Vacancy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="38" column="66" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="e#36#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Employer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+          <folding>
+            <element signature="e#36#84#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+        <state relative-caret-position="370">
+          <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
           <folding>
             <element signature="e#3085#3096#0#Twig" expanded="true" />
             <element signature="e#3393#3404#0#Twig" expanded="true" />
@@ -932,13 +1008,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Web/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-508">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+        <state relative-caret-position="216">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
           <folding>
-            <element signature="e#1329#1337#0#Twig" expanded="true" />
-            <element signature="e#1719#1727#0#Twig" expanded="true" />
+            <element signature="e#128#158#0#PHP" expanded="true" />
+            <element signature="e#1730#1756#0#PHP" expanded="true" />
+            <element signature="e#2486#2512#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

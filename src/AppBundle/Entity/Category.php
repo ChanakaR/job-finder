@@ -40,7 +40,7 @@ class Category
     }
 
     /**
-     * Get resources
+     * Get vacancies
      *
      * @return ArrayCollection
      */

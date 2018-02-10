@@ -39,11 +39,43 @@
     transition: background-color 0.3s ease-out;
 }
 
+.category-category-list{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.category-category-list h3{
+    margin-bottom: 50px;
+}
+
+.category-category-list ul{
+    list-style-type: none;
+}
+
+.category-category-list ul li{
+    margin-bottom: 10px;
+}
+
+.category-category-item{
+    border-radius: 20px;
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px;
+}
+
+.category-category-item:hover{
+    text-decoration: none;
+    color: #fff;
+    background-color: #727b84;
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
+}
+
 .vacancy-list {
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
+    padding: 10px 50px 50px;
 }
 
 .vacancy-row:hover{
@@ -88,4 +120,8 @@ footer a:hover{
 
 .footer-bottom{
     background-color: black;
+}
+
+.employer{
+    padding-bottom: 10px;
 }

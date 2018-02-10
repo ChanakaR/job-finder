@@ -35,9 +35,9 @@ class Vacancy
     private $category;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="employer",type="string",length=75)
+     * @ORM\ManyToOne(targetEntity="Employer", inversedBy="vacancy")
+     * @ORM\JoinColumn(name="employer_id",referencedColumnName="id")
      */
     private $employer;
 
