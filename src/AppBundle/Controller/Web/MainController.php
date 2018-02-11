@@ -71,6 +71,24 @@ class MainController extends Controller
     }
 
     /**
+     * @Route("/category/{id}",name="categoryDetails")
+     */
+    public function categoryDetailsAction($id){
+
+        $vacancy_list = $this->getVacancyByCategoryId($id);
+        $category = $this->getCategoryById($id);
+
+        return $this->render('pages/viewCategorySpec.html.twig',[
+            "home_activated" => false,
+            "category_activated" => true,
+            "employer_activated" => false,
+            "contact_activated" => false,
+            "vacancy_list"=> $vacancy_list,
+            "category" => $category,
+        ]);
+    }
+
+    /**
      * @Route("/employer",name="employer")
      */
     public function employerAction(){
@@ -138,6 +156,19 @@ class MainController extends Controller
     }
 
     /*
+     * Get category list from database and return as a json
+     */
+    private function getCategoryById($id){
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $query = $repository->createQueryBuilder('c')
+            ->where("c.id= :category_id")
+            ->setParameter("category_id",$id)
+            ->getQuery();
+        $result = $query->getArrayResult();
+        return $result;
+    }
+
+    /*
      * Get recent job vacancies
      */
     private function getRecentJobVacancies(){
@@ -155,9 +186,11 @@ class MainController extends Controller
     /*
      * Get list of job vacancies by category ID
      */
-    private function getVacancyByCategory($categoryId){
+    private function getVacancyByCategoryId($categoryId){
         $repository = $this->getDoctrine()->getRepository(Vacancy::class);
         $query =$repository->createQueryBuilder('v')
+            ->innerJoin('v.employer','e')
+            ->addSelect('e.name AS emp_name')
             ->orderBy('v.id','DESC')
             ->where("v.category = :category_id")
             ->setParameter("category_id",$categoryId)

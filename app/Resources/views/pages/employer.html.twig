@@ -35,7 +35,7 @@
             {% for employer in employer_list %}
                 <div class="col-lg-2">
                     <div class=" card employer">
-                        <img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/'~employer.logo) }}" alt="Card image cap">
+                        <a href="{{ path('employerDetails', {'id': employer.id}) }}"><img class="card-img-top" style="size: 640px 320px;" src="{{ asset('employers/'~employer.logo) }}" alt="Card image cap"></a>
                     </div>
                 </div>
             {% endfor %}

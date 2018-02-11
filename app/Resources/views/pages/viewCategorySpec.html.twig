@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container-fluid">
+        <div class="row bg-dark" style="padding-bottom: 20px;">
+            <div class="col-lg-12">
+                <h3 class="text-warning text-center">{{ category[0].name }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row vacancy-list">
+            <table id="vacancy-table" class="table table-condensed table-hover" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    {#<th>ID</th>#}
+                    <th>Position</th>
+                    <th>Employer</th>
+                    <th>Description</th>
+                    <th>Apply</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for vacancy in vacancy_list %}
+                    <tr class='vacancy-row' data-href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" >
+                        {#<td>{{ vacancy.id }}</td>#}
+                        <td>{{ vacancy[0].name }}</td>
+                        <td>{{ vacancy.emp_name  }}</td>
+                        <td>{{ vacancy[0].description }}</td>
+                        <td><a href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" target="_blank">More</a> </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
