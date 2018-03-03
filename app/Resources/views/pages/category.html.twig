@@ -35,7 +35,7 @@
                 {% for category in category_list %}
                     <div class="col-lg-3">
                         <ul>
-                            <li><a class="category-category-item" href="#">{{ category.name }}</a></li>
+                            <li><a class="category-category-item" href="{{ path('categoryDetails',{'id': category.id }) }}">{{ category.name }}</a></li>
                         </ul>
                     </div>
                 {% endfor %}
@@ -48,7 +48,7 @@
                     <div class="col-lg-3">
                         <ul>
                             {% for category in category_list|slice(start,length) %}
-                                <li><a class="category-category-item" href="#">{{ category.name }}</a></li>
+                                <li><a class="category-category-item" href="{{ path('categoryDetails',{'id': category.id }) }}">{{ category.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>

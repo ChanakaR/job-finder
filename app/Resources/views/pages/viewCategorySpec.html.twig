@@ -12,28 +12,35 @@
 
     <div class="container">
         <div class="row vacancy-list">
-            <table id="vacancy-table" class="table table-condensed table-hover" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    {#<th>ID</th>#}
-                    <th>Position</th>
-                    <th>Employer</th>
-                    <th>Description</th>
-                    <th>Apply</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for vacancy in vacancy_list %}
-                    <tr class='vacancy-row' data-href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" >
-                        {#<td>{{ vacancy.id }}</td>#}
-                        <td>{{ vacancy[0].name }}</td>
-                        <td>{{ vacancy.emp_name  }}</td>
-                        <td>{{ vacancy[0].description }}</td>
-                        <td><a href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" target="_blank">More</a> </td>
+            {% if vacancy_list is empty %}
+                <div class="col-sm-12 alert alert-info text-center" role="alert" style="margin-top: 50px;">
+                    <h4>No Records!</h4>
+                    <p>For now we do not have vacancies for the category {{ category[0].name }}.</p>
+                </div>
+            {% else %}
+                <table id="vacancy-table" class="table table-condensed table-hover" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        {#<th>ID</th>#}
+                        <th>Position</th>
+                        <th>Employer</th>
+                        <th>Description</th>
+                        <th>Apply</th>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {% for vacancy in vacancy_list %}
+                        <tr class='vacancy-row' data-href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" >
+                            {#<td>{{ vacancy.id }}</td>#}
+                            <td>{{ vacancy[0].name }}</td>
+                            <td>{{ vacancy.emp_name  }}</td>
+                            <td>{{ vacancy[0].description }}</td>
+                            <td><a href="{{ path('jobSpecPage',{'vacancy':'va.pdf'}) }}" target="_blank">More</a> </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
         </div>
     </div>
 

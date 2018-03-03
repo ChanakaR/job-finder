@@ -11,21 +11,21 @@
     <div class="container-fluid">
         <div class="row justify-content-center bg-dark search-area">
             <div class="col-lg-12 search-area-heading">
-                <h3 class="text-white text-center">EXPLORE YOUR JOBS...</h3>
+                <h3 class="text-white text-center">HIT ADDS</h3>
             </div>
             <div class="col-lg-3">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Keyword" aria-label="Search for...">
+                    <input type="text" class="form-control input-sm" placeholder="Keyword" aria-label="Search for...">
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="All categories" aria-label="Search for...">
+                    <input type="text" class="form-control input-sm" placeholder="All categories" aria-label="Search for...">
                 </div>
             </div>
             <div class="col-lg-3">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="All locations" aria-label="Search for...">
+                    <input type="text" class="form-control input-sm" placeholder="All locations" aria-label="Search for...">
                     <span class="input-group-btn">
                         <button class="btn btn-danger " type="button">Find</button>
                     </span>
@@ -38,7 +38,7 @@
                 {% for category in category_list %}
                     <div class="col-lg-2">
                         <ul>
-                            <li><a class="category-item" href="#">{{ category.name }}</a></li>
+                            <li><a class="category-item" href="{{ path('categoryDetails',{'id': category.id }) }}">{{ category.name }}</a></li>
                         </ul>
                     </div>
                 {% endfor %}
@@ -51,7 +51,7 @@
                     <div class="col-lg-2">
                         <ul>
                             {% for category in category_list|slice(start,length) %}
-                                <li><a class="category-item" href="#">{{ category.name }}</a></li>
+                                <li><a class="category-item" href="{{ path('categoryDetails',{'id': category.id }) }}">{{ category.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -85,7 +85,6 @@
                 {% endfor %}
                 </tbody>
             </table>
-
         </div>
     </div>
 

@@ -114,7 +114,7 @@ class MainController extends Controller
         return $this->render('pages/viewEmployerSpec.html.twig',[
             "home_activated" => false,
             "category_activated" => false,
-            "employer_activated" => false,
+            "employer_activated" => true,
             "contact_activated" => false,
             "employer"=>$employer_details["employer"],
             "vacancy_list"=>$employer_details["vacancy_list"],
@@ -134,11 +134,25 @@ class MainController extends Controller
             "category_activated"=> false,
             "employer_activated" => false,
             "contact_activated" => false,
-
         ]);
-//        return $this->redirect($this->generateUrl('homepage'));
     }
 
+    /**
+     * @Route("/sendMail",name="sendMail")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function sendMailAction(){
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Hello Email')
+            ->setFrom('bmcrathnayaka@gmail.com')
+            ->setTo('chanaka@orangehrmlive.com')
+            ->setBody("Hello from Job finder");
+        $this->get('mailer')->send($message);
+
+//        return $this->redirect($this->generateUrl('jobSpecPage',array('vacancy' => $vacancy)));
+        return $this->redirect($this->generateUrl('homepage'));
+    }
 
 
 
@@ -148,7 +162,6 @@ class MainController extends Controller
     private function getCategoryList(){
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $query = $repository->createQueryBuilder('c')
-            ->select('c.name')
             ->orderBy('c.name','ASC')
             ->getQuery();
         $result = $query->getArrayResult();

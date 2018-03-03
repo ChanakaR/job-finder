@@ -19,7 +19,7 @@
         <div class="row" style="padding-top: 10px;">
             <div class="col-lg-4 col-sm-12 card">
                 <h6 class="align-self-center font-weight-bold" style="margin-top: 2%">Apply via Email</h6>
-                <form>
+                <form action="{{ path('sendMail') }}">
                     <div class="form-group">
                         <label for="applicant_name">Your Name</label>
                         <input id="applicant_name" class="form-control form-control-sm" type="text" placeholder="Your Name">
