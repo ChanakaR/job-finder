@@ -1,5 +1,5 @@
 .search-area{
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .search-area-heading{
@@ -127,4 +127,12 @@ footer a:hover{
 .employer-description{
     margin-top: 30px;
     margin-bottom: 50px;
+}
+
+.input-xs {
+    height: 30px;
+    padding: 2px 5px;
+    font-size: 12px;
+    line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+    border-radius: 3px;
 }
